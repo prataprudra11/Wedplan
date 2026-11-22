@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WedPlan - Comprehensive Wedding Planning Portal with budget tracking, vendor directory, guest list management, wedding checklists, day-of timeline, and interactive seating charts." />
+  <meta name="keywords" content="wedding planning, wedding budget, guest list, vendor directory, seating chart, wedding checklist, wedding timeline" />
+  <title>WedPlan - Dream Wedding Planning Portal</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/views.css" />
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="WedPlan Home">
+        <div class="brand-icon-wrap">
+          <i class="fa-solid fa-rings-wedding"></i>
+        </div>
+        <span>Wed<span class="text-gold">Plan</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#dashboard" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+          <li><a href="#budget" class="nav-link"><i class="fa-solid fa-wallet"></i> Budget</a></li>
+          <li><a href="#vendors" class="nav-link"><i class="fa-solid fa-store"></i> Vendors</a></li>
+          <li><a href="#guests" class="nav-link"><i class="fa-solid fa-users"></i> Guests</a></li>
+          <li><a href="#checklist" class="nav-link"><i class="fa-solid fa-list-check"></i> Checklist</a></li>
+          <li><a href="#timeline" class="nav-link"><i class="fa-solid fa-clock"></i> Timeline</a></li>
+          <li><a href="#seating" class="nav-link"><i class="fa-solid fa-chair"></i> Seating</a></li>
+          <li><a href="#website" class="nav-link"><i class="fa-solid fa-globe"></i> Website</a></li>
+          <li><a href="#gallery" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a></li>
+          <li><a href="#messages" class="nav-link"><i class="fa-solid fa-comments"></i> Messages</a></li>
+        </ul>
+      </nav>
+
+      <!-- Utility Actions (Theme toggle, Couple badge, Mobile hamburger) -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- User Authentication & Couple Profile Badge -->
+        <button id="nav-auth-btn" class="btn btn-sm btn-outline hidden" onclick="WedPlanModals.openAuthModal('login')">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+        </button>
+
+        <div id="nav-user-badge" class="user-badge-pill" onclick="WedPlanModals.openEditProfileModal()" title="Edit Couple Profile">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar" class="user-badge-avatar" />
+          <span id="nav-user-name">Sophia & Alexander</span>
+          <i class="fa-solid fa-angle-down text-muted"></i>
+        </div>
+
+        <!-- Mobile Drawer Toggle Hamburger -->
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" type="button" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <a href="#home" class="nav-link"><i class="fa-solid fa-house"></i> Home Page</a>
+      <a href="#dashboard" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Wedding Dashboard</a>
+      <a href="#budget" class="nav-link"><i class="fa-solid fa-wallet"></i> Budget Planner</a>
+      <a href="#vendors" class="nav-link"><i class="fa-solid fa-store"></i> Vendor Directory</a>
+      <a href="#guests" class="nav-link"><i class="fa-solid fa-users"></i> Guest List & RSVPs</a>
+      <a href="#checklist" class="nav-link"><i class="fa-solid fa-list-check"></i> Wedding Checklist</a>
+      <a href="#timeline" class="nav-link"><i class="fa-solid fa-clock"></i> Day-Of Timeline & Countdown</a>
+      <a href="#seating" class="nav-link"><i class="fa-solid fa-chair"></i> Seating Arrangement Planner</a>
+      <a href="#website" class="nav-link"><i class="fa-solid fa-globe"></i> Wedding Website Builder</a>
+      <a href="#gallery" class="nav-link"><i class="fa-solid fa-images"></i> Inspiration Gallery</a>
+      <a href="#messages" class="nav-link"><i class="fa-solid fa-comments"></i> Message Board</a>
+      <hr style="border:none; border-top: 1px solid var(--color-border); margin: 1rem 0;" />
+      <button class="btn btn-primary btn-block" onclick="WedPlanModals.openEditProfileModal()">
+        <i class="fa-solid fa-user-pen"></i> Edit Couple Profile
+      </button>
+    </div>
+  </header>
+
+  <!-- Main View Container (Dynamically rendered by Router) -->
+  <main id="app-root" role="main"></main>
+
+  <!-- Global Modal Dialog Container -->
+  <div id="global-modal" class="custom-modal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="WedPlanUtils.closeModal('global-modal')"></div>
+    <div class="modal-dialog">
+      <div class="modal-content" id="global-modal-content">
+        <!-- Injected dynamically by modal controller -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo">
+            <div class="brand-icon-wrap"><i class="fa-solid fa-rings-wedding"></i></div>
+            <span>Wed<span class="text-gold">Plan</span></span>
+          </a>
+          <p>
+            An elegant, all-in-one wedding planning portal empowering couples to design and coordinate their dream celebration effortlessly.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Planning Tools</h4>
+          <ul>
+            <li><a href="#dashboard">Overview Dashboard</a></li>
+            <li><a href="#budget">Budget Manager</a></li>
+            <li><a href="#checklist">Planning Milestones</a></li>
+            <li><a href="#timeline">Day-Of Countdown</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Guest & Seating</h4>
+          <ul>
+            <li><a href="#guests">Guest List & RSVPs</a></li>
+            <li><a href="#seating">Seating Chart Organizer</a></li>
+            <li><a href="#website">Couple Wedding Website</a></li>
+            <li><a href="#messages">Message Board</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Creative Team</h4>
+          <ul>
+            <li><a href="#vendors">Vendor Directory</a></li>
+            <li><a href="#gallery">Inspiration Gallery</a></li>
+            <li><a href="javascript:void(0)" onclick="WedPlanModals.openEditProfileModal()">Couple Profile</a></li>
+            <li><a href="javascript:void(0)" onclick="WedPlanModals.openAuthModal('login')">Account Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026-2027 WedPlan Portal. Built for Web Development Internship. All rights reserved.</span>
+        <button class="demo-seed-btn" onclick="if(confirm('Reset all demo data back to factory defaults?')){window.store.resetToDefault(); WedPlanUtils.showToast('Demo data reloaded!', 'success'); window.app.renderActiveView();}">
+          <i class="fa-solid fa-rotate-left"></i> Reload Sample Demo Data
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Data & Utilities -->
+  <script src="data/sampleData.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/modals.js"></script>
+
+  <!-- View Controllers -->
+  <script src="js/views/home.js"></script>
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/budget.js"></script>
+  <script src="js/views/vendors.js"></script>
+  <script src="js/views/guests.js"></script>
+  <script src="js/views/checklist.js"></script>
+  <script src="js/views/timeline.js"></script>
+  <script src="js/views/seating.js"></script>
+  <script src="js/views/websiteBuilder.js"></script>
+  <script src="js/views/gallery.js"></script>
+  <script src="js/views/messages.js"></script>
+
+  <!-- Application Coordinator & Router -->
+  <script src="js/app.js"></script>
+</body>
+</html>
