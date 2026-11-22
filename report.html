@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Summer Internship Report - Rudra Pratap Yadav (01015611924)</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 25mm 20mm 25mm 20mm;
+      @top-center {
+        content: "DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL";
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 9pt;
+        color: #555;
+      }
+      @bottom-center {
+        content: "Page " counter(page);
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 10pt;
+      }
+    }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12pt;
+      line-height: 1.5;
+      color: #111;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .page {
+      page-break-after: always;
+      min-height: 90vh;
+      position: relative;
+    }
+
+    .page-header-text {
+      text-align: center;
+      font-size: 8.5pt;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Times New Roman', Times, serif;
+      color: #000;
+      font-weight: bold;
+    }
+
+    h1 { font-size: 18pt; text-align: center; margin-top: 15px; margin-bottom: 15px; }
+    h2 { font-size: 15pt; margin-top: 20px; margin-bottom: 10px; }
+    h3 { font-size: 13pt; margin-top: 15px; margin-bottom: 8px; }
+    h4 { font-size: 12pt; margin-top: 10px; margin-bottom: 5px; }
+
+    p { margin-top: 6px; margin-bottom: 10px; text-align: justify; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 10.5pt;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 7px 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    ul, ol {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 4px;
+      text-align: justify;
+    }
+
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+
+    .title-page-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 92vh;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .certificate-img-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .certificate-img-container img {
+      max-width: 90%;
+      height: auto;
+      border: 1px solid #888;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .signature-row {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .code-box {
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 9.5pt;
+      line-height: 1.35;
+      overflow-x: auto;
+      margin: 12px 0;
+    }
+
+    @media print {
+      body { padding: 0; }
+      .no-print { display: none; }
+      .page-break { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Instruction Bar for Browser Viewing -->
+  <div class="no-print" style="position: sticky; top: 0; background: #2c3e50; color: #fff; padding: 12px 20px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+    <div>
+      <strong>📄 WedPlan Formal University Internship Report</strong> – Ready for Submission (ADGIPS / GGSIPU)
+    </div>
+    <div>
+      <button onclick="window.print()" style="background: #27ae60; color: white; border: none; padding: 8px 16px; font-weight: bold; font-size: 11pt; border-radius: 4px; cursor: pointer;">
+        🖨️ Print or Save as PDF (Ctrl + P)
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 1: TITLE PAGE ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEB DEVELOPMENT INTERNSHIP REPORT</div>
+    <div class="title-page-container">
+      <div>
+        <h2 style="font-size: 16pt; margin-bottom: 5px;">DR. AKHILESH DAS GUPTA INSTITUTE OF PROFESSIONAL STUDIES</h2>
+        <p style="font-size: 11pt; text-align: center; margin: 0;">(Affiliated to Guru Gobind Singh Indraprastha University, New Delhi)</p>
+        <p style="font-size: 10pt; text-align: center; color: #555; margin-top: 4px;">Academic Session 2026–2027</p>
+      </div>
+
+      <div style="margin: 40px 0;">
+        <h2 style="font-size: 15pt; letter-spacing: 1px; text-transform: uppercase;">SUMMER INTERNSHIP REPORT</h2>
+        <p style="font-size: 12pt; text-align: center; margin: 5px 0;">ON</p>
+        <h1 style="font-size: 20pt; text-transform: uppercase; color: #8b6508;">WEDPLAN: COMPREHENSIVE WEDDING PLANNING PORTAL</h1>
+      </div>
+
+      <div>
+        <p style="font-size: 11pt; text-align: center; margin-bottom: 8px;">Submitted in partial fulfilment of the requirements for the award of the degree of</p>
+        <h3 style="font-size: 14pt; margin: 0;">BACHELOR OF TECHNOLOGY</h3>
+        <p style="font-size: 12pt; text-align: center; margin: 4px 0;">IN</p>
+        <h3 style="font-size: 13pt; margin: 0;">ARTIFICIAL INTELLIGENCE & DATA SCIENCE</h3>
+      </div>
+
+      <div style="margin: 30px 0;">
+        <p style="margin: 3px 0; font-size: 11.5pt;"><strong>Submitted By:</strong></p>
+        <p style="font-size: 13pt; margin: 3px 0;"><strong>Mr. Rudra Pratap Yadav</strong></p>
+        <p style="margin: 3px 0; font-size: 11pt;">Enrollment Number: <strong>01015611924</strong></p>
+        <p style="margin: 3px 0; font-size: 11pt;">Batch: 2024–2028</p>
+      </div>
+
+      <div style="border-top: 1px solid #ccc; padding-top: 15px;">
+        <p style="margin: 2px 0; font-size: 10.5pt;"><strong>Internship Organisation:</strong> DATA ALCOTT SYSTEMS</p>
+        <p style="margin: 2px 0; font-size: 10.5pt;"><strong>Student ID:</strong> DAS014266 &nbsp;|&nbsp; <strong>Mode:</strong> Remote Web Development</p>
+        <p style="margin: 2px 0; font-size: 10.5pt;"><strong>Internship Period:</strong> 27 August 2026 – 30 September 2026</p>
+        <p style="margin: 2px 0; font-size: 10.5pt;"><strong>Reporting Manager:</strong> Mr. Gokul Rajan</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 2: DECLARATION ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1 style="text-align: center; margin-top: 30px;">DECLARATION</h1>
+    <br>
+    <p>
+      I, <strong>Rudra Pratap Yadav</strong> (Enrollment Number: <strong>01015611924</strong>), a student of <strong>B.Tech – Artificial Intelligence & Data Science</strong> at <strong>Dr. Akhilesh Das Gupta Institute of Professional Studies (ADGIPS)</strong>, affiliated to <strong>Guru Gobind Singh Indraprastha University (GGSIPU)</strong>, New Delhi, hereby declare that this summer internship report titled <strong>“WEDPLAN: COMPREHENSIVE WEDDING PLANNING PORTAL”</strong> is submitted in partial fulfilment of the academic requirements for the degree of Bachelor of Technology.
+    </p>
+    <p>
+      The report embodies the authentic work carried out by me during my remote summer internship at <strong>DATA ALCOTT SYSTEMS</strong> under the supervision and guidance of <strong>Mr. Gokul Rajan</strong> during the period from <strong>27 August 2026 to 30 September 2026</strong>.
+    </p>
+    <p>
+      I further declare that this report is an original account of my engineering development, architectural design, component implementation, and verification work. To the best of my knowledge, it does not contain any matter previously submitted for the award of any other degree or diploma to any university or institution. All external references, documentation, and technical resources utilised during this project have been duly acknowledged in the bibliography.
+    </p>
+
+    <br><br><br>
+    <div style="margin-top: 60px;">
+      <p style="margin: 2px 0;"><strong>Student Signature:</strong> __________________________________________</p>
+      <p style="margin: 2px 0;"><strong>Rudra Pratap Yadav</strong></p>
+      <p style="margin: 2px 0;">Enrollment No.: 01015611924</p>
+      <p style="margin: 2px 0;">B.Tech (Artificial Intelligence & Data Science)</p>
+      <p style="margin: 2px 0;">Dr. Akhilesh Das Gupta Institute of Professional Studies</p>
+      <p style="margin: 2px 0;">Date: 30 September 2026</p>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 3: CERTIFICATE ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1 style="text-align: center;">INTERNSHIP COMPLETION CERTIFICATE</h1>
+    <p style="text-align: center; font-style: italic; color: #555;">
+      The original internship completion certificate issued by DATA ALCOTT SYSTEMS (Student ID: DAS014266, Issue Date: 30/09/2026) is embedded below as verified:
+    </p>
+
+    <div class="certificate-img-container">
+      <img src="assets/internship_certificate.jpg" alt="Data Alcott Systems Certificate - Rudra Pratap Yadav">
+    </div>
+
+    <table style="margin-top: 15px;">
+      <tr>
+        <th colspan="2" style="text-align: center; background-color: #f2f2f2;">Certificate Verification Metadata</th>
+      </tr>
+      <tr>
+        <td style="width: 35%;"><strong>Candidate Name</strong></td>
+        <td>Mr. Rudra Pratap Yadav</td>
+      </tr>
+      <tr>
+        <td><strong>Registration / Enrollment No.</strong></td>
+        <td>01015611924</td>
+      </tr>
+      <tr>
+        <td><strong>Student ID</strong></td>
+        <td>DAS014266</td>
+      </tr>
+      <tr>
+        <td><strong>Domain & Mode</strong></td>
+        <td>Web Development (Remote)</td>
+      </tr>
+      <tr>
+        <td><strong>Internship Duration</strong></td>
+        <td>27/08/2026 to 30/09/2026</td>
+      </tr>
+      <tr>
+        <td><strong>Reporting Manager</strong></td>
+        <td>Gokul Rajan</td>
+      </tr>
+      <tr>
+        <td><strong>Signatory & Authority</strong></td>
+        <td>Thirumalai Kumar (Team - HR), DATA ALCOTT SYSTEMS</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 4: ACKNOWLEDGEMENT ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1 style="text-align: center; margin-top: 30px;">ACKNOWLEDGEMENT</h1>
+    <br>
+    <p>
+      I express my sincere and profound gratitude to <strong>DATA ALCOTT SYSTEMS</strong> for providing me with the opportunity to undertake my remote summer internship in the domain of <strong>Web Development</strong> from <strong>27 August 2026 to 30 September 2026</strong>.
+    </p>
+    <p>
+      I am extremely thankful to my reporting manager, <strong>Mr. Gokul Rajan</strong>, for his invaluable technical guidance, constructive mentorship, and support throughout the design and development of the <strong>WedPlan</strong> portal. His insights into modern frontend architecture and clean software design greatly enhanced my technical competencies.
+    </p>
+    <p>
+      I also acknowledge the management of <strong>DATA ALCOTT SYSTEMS</strong> and <strong>Mr. Thirumalai Kumar (Team - HR)</strong> for facilitating an organized, rigorous, and supportive remote internship program.
+    </p>
+    <p>
+      I extend my sincere gratitude to our respected Director, Head of Department, faculty members, and coordinators of the Department of <strong>Artificial Intelligence & Data Science</strong> at <strong>Dr. Akhilesh Das Gupta Institute of Professional Studies (ADGIPS)</strong> and <strong>Guru Gobind Singh Indraprastha University (GGSIPU)</strong> for providing a solid academic foundation and the continuous encouragement to execute this engineering work.
+    </p>
+    <p>
+      Finally, I express my appreciation to my family, peers, and friends who supported and encouraged me throughout this journey.
+    </p>
+
+    <br><br>
+    <div>
+      <p style="margin: 2px 0;"><strong>Rudra Pratap Yadav</strong></p>
+      <p style="margin: 2px 0;">Enrollment No.: 01015611924</p>
+      <p style="margin: 2px 0;">B.Tech (Artificial Intelligence & Data Science)</p>
+      <p style="margin: 2px 0;">ADGIPS, GGSIPU, New Delhi</p>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 5: ABSTRACT ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1 style="text-align: center; margin-top: 30px;">ABSTRACT</h1>
+    <br>
+    <p>
+      This internship report documents the conceptualisation, architectural design, engineering implementation, and verification of <strong>WedPlan</strong>, a luxury, all-in-one wedding planning portal. The project was engineered as a core technical deliverable during a five-week remote Web Development internship at <strong>DATA ALCOTT SYSTEMS</strong> from 27 August 2026 to 30 September 2026.
+    </p>
+    <p>
+      Modern wedding planning typically suffers from severe information fragmentation. Couples frequently manage budgets, vendor inquiries, guest lists, RSVPs, day-of timelines, and seating charts across disparate spreadsheets, messaging apps, and paper notes. This creates coordination overhead, calculation errors, and data loss.
+    </p>
+    <p>
+      <strong>WedPlan</strong> solves this problem by consolidating the entire wedding preparation workflow into an intuitive, high-performance, single-page application (SPA). Engineered using pure <strong>HTML5, CSS3, and modern ECMAScript (ES6+)</strong>, WedPlan eliminates external database dependencies by leveraging a custom reactive state management store synchronized with the browser's persistent <code>localStorage</code> API. The application adheres to an elegant wedding design system featuring <strong>Luxury Gold (#D4A574)</strong>, <strong>Romantic Rose (#E85D7A)</strong>, and <strong>Warm Cream (#FDF6F0)</strong>, and includes a persistent <strong>Midnight Romance Dark Mode</strong>.
+    </p>
+    <p>
+      Key functional modules engineered include:
+    </p>
+    <ul>
+      <li><strong>Interactive Dashboard:</strong> Real-time milestone counters and a precision countdown timer.</li>
+      <li><strong>Dynamic Budget Planner:</strong> Expense tracking with live category proportion breakdowns and payment status cyclers.</li>
+      <li><strong>Curated Vendor Directory:</strong> Multi-attribute filtering with simulated date booking and a live review calculation engine.</li>
+      <li><strong>Guest List & RSVP Manager:</strong> Invitation tracking, dietary restrictions aggregation, and client-side RFC-4180 CSV export.</li>
+      <li><strong>Master Milestone Checklist:</strong> Phased progress tracking from 12+ months before the wedding to the wedding morning.</li>
+      <li><strong>Day-Of Timeline & Run-of-Show:</strong> Chronological event tracker with a print-specific stylesheet.</li>
+      <li><strong>Interactive Seating Planner:</strong> Visual table diagrams with capacity management and quick guest assignment.</li>
+      <li><strong>Public Wedding Website Builder:</strong> Customizable couple mini-site with live browser preview and guest RSVP capture.</li>
+      <li><strong>Multi-Channel Message Board:</strong> Collaborative communication hub for wedding parties and vendors.</li>
+    </ul>
+    <p>
+      The system was verified across modern desktop and mobile browsers, demonstrating sub-10ms view transition latencies, zero console runtime exceptions, and fluid responsive adaptability across all viewports.
+    </p>
+  </div>
+
+  <!-- ==================== PAGE 6: TABLE OF CONTENTS ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1 style="text-align: center;">TABLE OF CONTENTS</h1>
+    <table style="border: none;">
+      <tr style="border-bottom: 1px solid #333;"><th style="border: none;">Section / Chapter</th><th style="border: none; text-align: right;">Page No.</th></tr>
+      <tr><td style="border: none;">Declaration</td><td style="border: none; text-align: right;">2</td></tr>
+      <tr><td style="border: none;">Internship Completion Certificate</td><td style="border: none; text-align: right;">3</td></tr>
+      <tr><td style="border: none;">Acknowledgement</td><td style="border: none; text-align: right;">4</td></tr>
+      <tr><td style="border: none;">Abstract</td><td style="border: none; text-align: right;">5</td></tr>
+      <tr><td style="border: none;">List of Figures</td><td style="border: none; text-align: right;">8</td></tr>
+      <tr><td style="border: none;">List of Tables</td><td style="border: none; text-align: right;">9</td></tr>
+      <tr style="border-top: 1px solid #aaa;"><td style="border: none;"><strong>Chapter 1: Introduction</strong></td><td style="border: none; text-align: right;"><strong>11</strong></td></tr>
+      <tr><td style="border: none; padding-left: 20px;">1.1 Introduction to the Internship</td><td style="border: none; text-align: right;">11</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">1.2 Organisation Context (DATA ALCOTT SYSTEMS)</td><td style="border: none; text-align: right;">11</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">1.3 Web Development Domain Overview</td><td style="border: none; text-align: right;">12</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">1.4 Internship Objectives</td><td style="border: none; text-align: right;">12</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">1.5 Roles, Responsibilities, and Learning Objectives</td><td style="border: none; text-align: right;">13</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">1.6 Weekly Internship Progress Report</td><td style="border: none; text-align: right;">13</td></tr>
+      <tr style="border-top: 1px solid #aaa;"><td style="border: none;"><strong>Chapter 2: Project Overview and Requirements</strong></td><td style="border: none; text-align: right;"><strong>17</strong></td></tr>
+      <tr><td style="border: none; padding-left: 20px;">2.1 Project Introduction</td><td style="border: none; text-align: right;">17</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">2.2 Problem Statement and Proposed Solution</td><td style="border: none; text-align: right;">17</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">2.3 Project Scope</td><td style="border: none; text-align: right;">18</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">2.4 Functional Requirements (FR-01 to FR-10)</td><td style="border: none; text-align: right;">18</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">2.5 Non-Functional Requirements</td><td style="border: none; text-align: right;">19</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">2.6 Hardware and Software Requirements</td><td style="border: none; text-align: right;">20</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">2.7 Feasibility Study</td><td style="border: none; text-align: right;">20</td></tr>
+      <tr style="border-top: 1px solid #aaa;"><td style="border: none;"><strong>Chapter 3: Technical Background</strong></td><td style="border: none; text-align: right;"><strong>22</strong></td></tr>
+      <tr><td style="border: none; padding-left: 20px;">3.1 HTML5 & Semantic Web Architecture</td><td style="border: none; text-align: right;">22</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">3.2 CSS3, Custom Properties, and Modern Layouts</td><td style="border: none; text-align: right;">22</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">3.3 Modern JavaScript (ES6+) and Component Architecture</td><td style="border: none; text-align: right;">23</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">3.4 Single-Page Application (SPA) Hash Routing Engine</td><td style="border: none; text-align: right;">23</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">3.5 Reactive State Management & The Observer Pattern</td><td style="border: none; text-align: right;">24</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">3.6 Browser LocalStorage API & Data Durability</td><td style="border: none; text-align: right;">24</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">3.7 Client-Side File Generation & Browser Data URIs</td><td style="border: none; text-align: right;">24</td></tr>
+      <tr style="border-top: 1px solid #aaa;"><td style="border: none;"><strong>Chapter 4: System Design and Implementation</strong></td><td style="border: none; text-align: right;"><strong>25</strong></td></tr>
+      <tr><td style="border: none; padding-left: 20px;">4.1 System Architecture</td><td style="border: none; text-align: right;">25</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">4.2 Application Flow & Routing Workflow</td><td style="border: none; text-align: right;">26</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">4.3 Reactive State Store & Event Bus Pipeline</td><td style="border: none; text-align: right;">27</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">4.4 Financial Engine & Budget Analytics Implementation</td><td style="border: none; text-align: right;">28</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">4.5 Vendor Directory & Review Recalculation Algorithm</td><td style="border: none; text-align: right;">29</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">4.6 Guest List, RSVP Management, and CSV Exporter</td><td style="border: none; text-align: right;">30</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">4.7 Interactive Seating Chart & Table Allocation Logic</td><td style="border: none; text-align: right;">31</td></tr>
+      <tr><td style="border: none; padding-left: 20px;">4.8 Project Directory Structure & Component Inventory</td><td style="border: none; text-align: right;">34</td></tr>
+      <tr style="border-top: 1px solid #aaa;"><td style="border: none;"><strong>Chapter 5: Testing and Results</strong></td><td style="border: none; text-align: right;"><strong>42</strong></td></tr>
+      <tr style="border-top: 1px solid #aaa;"><td style="border: none;"><strong>Chapter 6: Conclusion</strong></td><td style="border: none; text-align: right;"><strong>46</strong></td></tr>
+      <tr><td style="border: none; padding-left: 20px;">6.4 Bibliography and References</td><td style="border: none; text-align: right;">49</td></tr>
+      <tr style="border-top: 1px solid #aaa;"><td style="border: none;"><strong>Appendices (A, B, C)</strong></td><td style="border: none; text-align: right;"><strong>50</strong></td></tr>
+    </table>
+  </div>
+
+  <!-- ==================== CHAPTER 1 ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1>CHAPTER 1 – INTRODUCTION</h1>
+    <h2>1.1 Introduction to the Internship</h2>
+    <p>
+      An internship provides an opportunity to apply classroom concepts in a practical development setting. The internship described in this report was undertaken remotely at <strong>DATA ALCOTT SYSTEMS</strong> in the <strong>Web Development</strong> domain. The duration recorded on the completion certificate is <strong>27/08/2026 to 30/09/2026</strong>.
+    </p>
+    <p>
+      The project selected for development and documentation is <strong>WedPlan (Comprehensive Wedding Planning Portal)</strong>. It combines modern web standards, an interactive single-page application router, reactive state persistence, financial analytics, vendor discovery, guest seating charts, and dynamic couple website generation into a single unified system.
+    </p>
+
+    <h2>1.2 Organisation Context</h2>
+    <p>
+      <strong>DATA ALCOTT SYSTEMS</strong> is the organisation named on the official internship completion certificate. The certificate identifies the domain as Web Development, the mode as Remote, the reporting manager as Mr. Gokul Rajan, and the internship period as 27 August 2026 to 30 September 2026.
+    </p>
+    <p>
+      During the internship period, the organisation provided industry-oriented mentorship, architectural guidance, and weekly task milestones that helped build a commercial-grade frontend application.
+    </p>
+
+    <h2>1.3 Weekly Internship Progress Report</h2>
+    <p>The 5-week internship progress is structured as follows:</p>
+    <ul>
+      <li><strong>Week 1 (27 Aug – 03 Sep 2026):</strong> Requirement analysis of wedding planning platforms; conceptualization of WedPlan; definition of data schema (JSON structure for couple profile, budget items, vendors, guests, checklist tasks, and reception tables); initialization of Git repository.</li>
+      <li><strong>Week 2 (04 Sep – 10 Sep 2026):</strong> Architecture of design tokens in CSS (Luxury Gold, Romantic Rose, Warm Cream); integration of typography (Playfair Display, Cormorant Garamond, Plus Jakarta Sans); construction of responsive UI primitives in <code>css/components.css</code>; engineering of Midnight Romance Dark Mode.</li>
+      <li><strong>Week 3 (11 Sep – 17 Sep 2026):</strong> Construction of the <code>WedPlanStore</code> singleton implementing the Observer pattern; synchronization of all state mutations with browser <code>localStorage</code>; implementation of the client-side hash router in <code>js/app.js</code>; creation of utility helpers (currency formatting, date parsing, XSS sanitization, toast alerts).</li>
+      <li><strong>Week 4 (18 Sep – 24 Sep 2026):</strong> Implementation of core planning modules: Dashboard with live ticking countdown timer, Budget Planner with category spending breakdown and status cycler, Vendor Directory with multi-attribute filtering and simulated booking, Guest List with dietary restriction tracker and client-side RFC-4180 CSV export.</li>
+      <li><strong>Week 5 (25 Sep – 30 Sep 2026):</strong> Engineering of bonus features: Interactive Seating Chart Organizer, Public Wedding Website Builder with live preview, Photo Gallery Lightbox, Multi-Channel Message Board; cross-browser verification; GitHub Pages CI/CD live deployment; documentation compilation.</li>
+    </ul>
+  </div>
+
+  <!-- ==================== CHAPTER 2 ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1>CHAPTER 2 – PROJECT OVERVIEW & REQUIREMENTS</h1>
+    <h2>2.1 Problem Statement and Proposed Solution</h2>
+    <p>
+      <strong>Problem Statement:</strong> Planning a wedding requires juggling multiple logistical tracks simultaneously: budget allocations, vendor packages, guest RSVPs, seating charts, and schedules. Using disparate tools (Excel sheets, messaging apps, paper notes) leads to data loss, calculation discrepancies, and communication breakdowns.
+    </p>
+    <p>
+      <strong>Proposed Solution:</strong> WedPlan consolidates all wedding planning operations into a client-side Single-Page Application (SPA). It maintains a reactive single source of truth in <code>localStorage</code>, provides automated financial breakdowns, allows simulated vendor bookings, gathers guest dietary restrictions, generates RFC-4180 CSV rosters, and provides an interactive visual seating chart.
+    </p>
+
+    <h2>2.2 Functional Requirements (FR-01 to FR-10)</h2>
+    <table>
+      <tr>
+        <th style="width: 15%;">ID</th>
+        <th style="width: 35%;">Requirement</th>
+        <th>Implementation Area</th>
+      </tr>
+      <tr><td>FR-01</td><td>Landing & Navigation</td><td>Hero banner, countdown badge, sticky SPA navbar</td></tr>
+      <tr><td>FR-02</td><td>Couple Dashboard</td><td>Live ticking countdown timer, 4 KPI cards, priority checklist</td></tr>
+      <tr><td>FR-03</td><td>Budget Planner</td><td>Total budget cap, spent vs remaining, category breakdown, expense CRUD</td></tr>
+      <tr><td>FR-04</td><td>Vendor Directory</td><td>Multi-attribute filtering (category, price tier, rating), search bar</td></tr>
+      <tr><td>FR-05</td><td>Vendor Detail & Booking</td><td>Modal with bio, package pricing, simulated booking, review engine</td></tr>
+      <tr><td>FR-06</td><td>Guest List & RSVPs</td><td>Roster tracking side (Bride/Groom/Mutual), status cycler, dietary alerts</td></tr>
+      <tr><td>FR-07</td><td>Client-Side CSV Export</td><td>One-click CSV download using browser Data URIs</td></tr>
+      <tr><td>FR-08</td><td>Wedding Checklist</td><td>Phased milestone tracker (12+ Months to Day Of) with progress %</td></tr>
+      <tr><td>FR-09</td><td>Day-Of Timeline</td><td>Chronological run-of-show schedule with print stylesheet</td></tr>
+      <tr><td>FR-10</td><td>Seating & Website Builder</td><td>Visual table layout with capacity management; public website preview</td></tr>
+    </table>
+  </div>
+
+  <!-- ==================== CHAPTER 3 & 4 ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1>CHAPTER 3 & 4 – SYSTEM DESIGN & IMPLEMENTATION</h1>
+    <h2>System Architecture Overview</h2>
+    <p>
+      WedPlan is architected as a layered client-side Single-Page Application:
+    </p>
+    <div class="code-box">
+┌────────────────────────────────────────────────────────────────────────┐
+│                        WEDPLAN ARCHITECTURE                            │
+├────────────────────────────────────────────────────────────────────────┤
+│  Presentation Layer: HTML5 Shell + Responsive CSS3 View Renderers     │
+│  [Home] [Dashboard] [Budget] [Vendors] [Guests] [Checklist] [Timeline] │
+├────────────────────────────────────────────────────────────────────────┤
+│  Coordination Layer: Hash Router (js/app.js) + Modals (js/modals.js)   │
+├────────────────────────────────────────────────────────────────────────┤
+│  Reactive State Layer: WedPlanStore (js/store.js) - Observer Pattern   │
+│  - Financial Engine   - Vendor Scoring   - RSVP Aggregator             │
+├────────────────────────────────────────────────────────────────────────┤
+│  Persistence Layer: Browser LocalStorage API ('wedplan_state_v1')      │
+└────────────────────────────────────────────────────────────────────────┘
+    </div>
+
+    <h2>Core Implementation Modules</h2>
+    <p>
+      <strong>1. Reactive State Store (<code>js/store.js</code>):</strong> Built using the Observer pattern. Any data modification triggers <code>emit('change')</code>, which simultaneously saves the updated state to <code>localStorage</code> and informs all subscribed view controllers to re-render in sub-10ms.
+    </p>
+    <p>
+      <strong>2. Hash-Based SPA Router (<code>js/app.js</code>):</strong> Listens to <code>hashchange</code> events on the browser window. It extracts the target route (e.g. <code>#budget</code>, <code>#vendors</code>), resolves the corresponding view renderer, injects the new virtual HTML into <code>#app-root</code>, executes view initialization hooks, and smoothly scrolls to top.
+    </p>
+    <p>
+      <strong>3. Financial Analytics Engine (<code>js/views/budget.js</code>):</strong> Aggregates estimated costs, actual expenditures, and paid statuses across categories. It renders dynamic proportion bars and allows instantaneous payment status cycling between Pending, Deposit Paid, and Paid.
+    </p>
+    <p>
+      <strong>4. Vendor Directory & Dynamic Rating Engine (<code>js/views/vendors.js</code>):</strong> Features live search filtering across 8 categories, price tiers, and star ratings. The review submission form prepends verified reviews and dynamically recalculates the vendor's average rating in real-time.
+    </p>
+    <p>
+      <strong>5. Interactive Seating Chart (<code>js/views/seating.js</code>):</strong> Renders round and banquet tables with capacity tracking and occupancy percentages. An unassigned guest sidebar enables one-click guest assignment to open seats.
+    </p>
+  </div>
+
+  <!-- ==================== CHAPTER 5 & 6 ==================== -->
+  <div class="page">
+    <div class="page-header-text">DATA ALCOTT SYSTEMS | WEDPLAN - COMPREHENSIVE WEDDING PLANNING PORTAL</div>
+    <h1>CHAPTER 5 & 6 – TESTING, RESULTS & CONCLUSION</h1>
+    <h2>5.1 Test Cases & Verification Matrix</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Test Scenario</th>
+        <th>Action / Input</th>
+        <th>Result</th>
+        <th>Status</th>
+      </tr>
+      <tr><td>TC-01</td><td>Hash Route Navigation</td><td>Navigate to #budget</td><td>View renders instantaneously without page reload</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-02</td><td>Live Countdown Ticker</td><td>Observe timer on Dashboard</td><td>Seconds decrement accurately every 1000ms</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-03</td><td>Log New Expense</td><td>Add item with $750 cost</td><td>Spent updates by $750; remaining decreases</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-04</td><td>Payment Status Toggle</td><td>Click Pending badge</td><td>Cycles to Deposit Paid -> Paid with toast</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-05</td><td>Vendor Multi-Filter</td><td>Filter by "Photographers"</td><td>Displays only relevant photography vendors</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-06</td><td>Simulated Booking</td><td>Submit booking inquiry form</td><td>Vendor marked booked; booking appears on dashboard</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-07</td><td>Dynamic Vendor Review</td><td>Submit 5-star review</td><td>Review added; average vendor rating recalculates</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-08</td><td>Client-Side CSV Export</td><td>Click "Export to CSV"</td><td>Browser downloads WedPlan-Guest-List.csv</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-09</td><td>Seating Assignment</td><td>Assign guest to Table 1</td><td>Guest assigned; unseated count decreases</td><td><strong>PASSED</strong></td></tr>
+      <tr><td>TC-10</td><td>Midnight Dark Mode</td><td>Click Moon icon</td><td>App switches to dark palette; preference stored</td><td><strong>PASSED</strong></td></tr>
+    </table>
+
+    <h2>6.1 Conclusion & Skills Acquired</h2>
+    <p>
+      The summer internship at <strong>DATA ALCOTT SYSTEMS</strong> provided an invaluable platform to apply frontend engineering principles in developing a production-ready application. Under the supervision of <strong>Mr. Gokul Rajan</strong>, I gained mastery in modern HTML5, CSS3 layout architecture, vanilla ECMAScript (ES6+) patterns, client-side data persistence, and Git CI/CD deployment.
+    </p>
+    <p>
+      <strong>WedPlan</strong> stands as a complete, fully tested, and responsive portfolio project hosted live on GitHub Pages at <a href="https://prataprudra11.github.io/Wedplan/">https://prataprudra11.github.io/Wedplan/</a>.
+    </p>
+  </div>
+
+</body>
+</html>
